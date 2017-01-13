@@ -1,0 +1,25 @@
+{% extends "sentry/bases/auth.html" %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block auth_main %}
+<form class="form-stacked" action="" method="post">
+  {% csrf_token %}
+  {{ form.provider }}
+  {{ form.op }}
+
+  {% if form.errors %}
+    <div class="alert alert-block alert-error">{% trans "Please correct the errors below." %}</div>
+  {% endif %}
+
+  {{ form|as_crispy_errors }}
+
+  {{ form.username|as_crispy_field }}
+
+  {{ form.password|as_crispy_field }}
+
+  <fieldset class="form-actions">
+   <button type="submit" class="btn btn-primary btn-lg">Login</button>
+  </fieldset>
+</form>

@@ -34,11 +34,11 @@ setup(
     tests_require=tests_require,
     extras_require={'tests': tests_require},
     include_package_data=True,
-    # entry_points={
-    #     'sentry.apps': [
-    #         'auth_crowd = sentry_auth_crowd',
-    #     ],
-    # },
+    entry_points={
+        'sentry.apps': [
+            'auth_crowd = sentry_auth_crowd',
+        ],
+    },
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
